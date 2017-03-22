@@ -19,9 +19,10 @@ var main = function () {
 		$("main .content").empty();
 		if ($element.parent().is(":nth-child(1)")) {
 			$content = $("<ul>");
-			toDos.forEach(function (todo) {
-			$content.append($("<li>").text(todo));
-		});
+			var i;
+			for (i = toDos.length-1; i>=0; i--) {
+				$content.append($("<li>").text(toDos[i]));
+			};
 			$("main .content").append($content);
 			console.log("Щелчок на первой вкладке!");
 		} else if ($element.parent().is(":nth-child(2)")) {
